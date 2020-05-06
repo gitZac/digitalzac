@@ -6,8 +6,7 @@
     }
 }
 
-@mixin gradred{
-    
+@mixin gradred{   
     background: rgba(255,255,255,1);
     background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(239,64,54,1) 0%, rgba(239,64,54,0.75) 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(0%, rgba(239,64,54,1)), color-stop(100%, rgba(239,64,54,0.75)));

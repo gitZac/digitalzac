@@ -1,20 +1,27 @@
-  <?php //$abt_page_data = new WP_Query('page_id=7'); while($abt_page_data->have_posts()): $abt_page_data->the_post(); ?>
-  
 <section class="section">
+
+<?php $args = array(
+        'post_type' => 'bio',							
+        'posts_per_page' => 1,							
+        'orderby' => 'title',
+        'order' => 'ASC',
+    ); ?>
+
+<?php $hero = new WP_Query($args); while($hero->have_posts()): $hero->the_post(); ?>
 
    <div class="bio">
       
-       <h2 class="section__title--inner u-text-center">A Little About Me.</h2>
+       <h2 class="section__title--inner u-text-center"><?php the_field('bio_title'); ?></h2>
         <div class="bio__image">
-            <img src="http://via.placeholder.com/600x300" alt="" class="feat-proj__image">
+            <?php the_post_thumbnail(); ?>
         </div>
 
         <div class="bio__content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque incidunt inventore mollitia laudantium laborum, dolores excepturi ipsa earum iusto fugit delectus. Sed reiciendis delectus nostrum blanditiis incidunt saepe? Dolorem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque incidunt inventore mollitia laudantium laborum, dolores excepturi ipsa earum iusto fugit delectus. Sed reiciendis delectus nostrum blanditiis incidunt saepe? Dolorem!</p>
+            <p><?php the_field('bio_body'); ?></p>
         </div>
        
    </div>
-   
-</section>
 
-  <?php// endwhile; wp_reset_postdata(); ?>
+<?php endwhile; wp_reset_postdata(); ?>
+
+</section>

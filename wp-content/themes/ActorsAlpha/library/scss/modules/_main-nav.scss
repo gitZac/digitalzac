@@ -6,7 +6,6 @@
     color:#333;
 
     -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.75);
     
     &__logo-container{
@@ -47,7 +46,6 @@
         
         @include respond(tab-port){
             display: none;
-//            display:block;
             padding: 0 2rem;
             border-radius: .2rem;
         }
@@ -108,7 +106,7 @@
 }
 
 .current-menu-item{
-    border-bottom: 3px solid $colorPrimary;
+    border-bottom: 2px solid $colorPrimary;
 }
 
 .fa-facebook-official:hover{

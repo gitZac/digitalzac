@@ -1,8 +1,10 @@
 .port{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: .1rem;
+    grid-gap: .2rem;
     color:#fff;
+    max-width: 140rem;
+    margin: 0 auto;
     
     @include respond(phone-land){
         grid-template-columns: 1fr;
@@ -18,6 +20,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         padding-top: 2rem;
+        min-height:40rem;
     }
     
     &__card:after{
@@ -29,7 +32,12 @@
         height:100%;
         z-index: 0;
         background-color:rgba(0,0,0,0.2);
+
+        @include respond(tab-landscape){
+            background-color:rgba(0,0,0,0.5);
+        }
         
+        -webkit-transition:background-color 0.5s ease-in-out;
         transition:background-color 0.5s ease-in-out;
     }
     
@@ -45,47 +53,79 @@
         grid-column: 2 / span 1;
         grid-row: 1 / span 1;   
         padding-right: 1rem;
+
+        img{
+            max-height: 7rem;
+        }
     }
     
     &__title{
         grid-column: 2 / span 3;
-        grid-row: 3 / span 2;
-        
-        @include respond(tab-landscape){
-            transform: translateY(4rem);
-        }
-        
+        grid-row: 3 / span 2;        
         font-size: 3rem;
         line-height: 145%;
         padding-top: 1rem;
         text-shadow: 1px 1px 1px #000;
     
+        -webkit-transform: translateY(8rem);
+    
         transform: translateY(8rem);
         opacity: 1;
-        
+        -webkit-transition: all 0.5s ease-in-out;
         transition: all 0.5s ease-in-out;
+
+        @include respond(tab-landscape){
+            grid-column: 1 / span 4;
+            grid-row: 2 / span 2;
+            padding: 0 3rem;
+            font-size: 2.5rem;
+        }
     }
     
     &__card:hover &__title{
+        -webkit-transform: translateY(0);
         transform: translateY(0);
         color:$colorSecondary;
+
+        @include respond(tab-landscape){
+            transform: none;
+            -webkit-transform: none;
+        }
     }
         
     &__plist{
         grid-column: 2 / span 3;
         grid-row: 2 / span 1;
         font-size: 1.8rem;
-        align-self: flex-end;      
-        
+        -ms-flex-item-align: end;
+        align-self: flex-end;        
+        -webkit-transform: translateX(1000px);
         transform: translateX(1000px);
         opacity: 0;
-        
+        -webkit-transition: all 0.5s ease-in-out;
         transition: all 0.5s ease-in-out;
+
+        @include respond(tab-landscape){
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 0;
+
+            grid-column: 1 / span 4;
+            grid-row: 2 / span 1;
+            font-size: 1.8rem;
+            padding: 0 3rem;
+        }
     }
         
     &__card:hover &__plist{
         opacity: 1;
-        transform: translateX(0);   
+        -webkit-transform: translateX(0);
+        transform: translateX(0);  
+        
+        @include respond(tab-landscape){
+            opacity: 0;
+        }
+
     }
     
     &__plist-item{
@@ -103,7 +143,17 @@
         grid-row: 5 / span 1;
         
         opacity: 0;        
+        -webkit-transition: all 0.5s ease-in-out;        
         transition: all 0.5s ease-in-out;
+
+        @include respond(tab-landscape){
+            opacity: 1;
+            padding:0 3rem;
+            grid-column: 1 / span 3;
+            grid-row: 4 / span 1;
+
+            margin-top:1rem;
+        }
     }
     
     &__card:hover &__btn-container{
@@ -125,5 +175,4 @@
         padding:1rem !important;
         background-color: #333;
     }
-    
 }

@@ -18,7 +18,7 @@
 
             <div class="row">
 
-                <div class="col-1-of-2">
+                <div class="col-1-of-2 text-block__single">
                    
                     <h3 class="text-block__title"><?php the_field('left_title') ?></h3>
 
@@ -26,11 +26,11 @@
 
                 </div>
 
-                <div class="col-1-of-2">
+                <div class="col-1-of-2 text-block__single">
 
                     <h3 class="text-block__title"><?php the_field('right_title'); ?></h3>
 
-                    <p class="text-block__text"><?php the_field('right_text'); ?></p>
+                    <p class="text-block__text"><?php echo the_field('right_text'); ?></p>
 
                 </div>
 

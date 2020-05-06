@@ -549,6 +549,21 @@ function my_custom_styles( $init_array ) {
 // Attach callback to 'tiny_mce_before_init' 
 add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
 
+// Custom Excerpt function for Advanced Custom Fields
+function custom_field_excerpt() {
+	global $post;
+	$text = get_field('bio_body'); //Replace 'your_field_name'
+	if ( '' != $text ) {
+		$text = strip_shortcodes( $text );
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]&gt;', ']]&gt;', $text);
+		$excerpt_length = 80; // 20 words
+		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	}
+	return apply_filters('the_excerpt', $text);
+}
+
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/

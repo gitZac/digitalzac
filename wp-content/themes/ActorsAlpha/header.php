@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
 
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
+        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.png" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -28,7 +28,7 @@
             tests: {}
         });
         </script>
-
+    
 	</head>
 	
 <body <?php body_class(); ?>>
@@ -43,8 +43,9 @@
 
                 <div class="main-nav__logo-container">
                     
-                    <a href="http://localhost:8888/ztorg_v5.1"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/digitalzac.com_logo2.png" alt="digitalzac.com -- Custom web design, content writing and SEO." class="main-nav__logo-image"></a> 
-
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/digitalzac.com_logo2.png" alt="digitalzac.com -- Custom web design, content writing and SEO." class="main-nav__logo-image">
+                    </a> 
                     <div class="main-nav__mobile-icon">
                         <a href="#" class="main-nav__burgernav"><i class="fa fa-bars"></i></a>
                     </div>

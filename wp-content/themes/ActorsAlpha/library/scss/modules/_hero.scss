@@ -2,8 +2,10 @@
     overflow:hidden;
     color:#fff;
     height:85vh;
-    background-size: cover;
-    background-position:right bottom;
+
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center center;
     position: relative;
     margin-top: 9rem;
     
@@ -15,24 +17,19 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+
+        @include respond(phone-land){
+            background-attachment: scroll;
+        }
     }
     
     &__content{
         position: absolute;
         top:50%;
-        left:52%;
+        left:60%;
         transform: translate(-50%,-50%);
         text-align: left;
-        padding:0 2rem;
         width: 100%;
-        
-        @include respond(phone-land){
-            left:55%;
-        }
-        
-        @include respond(phone){
-            left:60%;
-        }
     }
     
     &__content--blog{
@@ -45,45 +42,50 @@
     }
     
     &__title{
-        font-size: 6rem;
+        font-size: 8.5rem;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
         max-width: 75%;
+        margin-bottom: 3rem;
+        
+        @include respond(phone-land){
+            font-size: 7rem;
+        }
         
         @include respond(phone){
             max-width: 95%;
-        }
-        
-        &::after{
-            content: "";
-            display: block;
-            height: 3px;
-            width: 27rem;
-            background: $colorSecondary;
-            margin-top: 3rem;
-            margin-bottom: 3rem;   
+            font-size: 10vw;
         }
     }
     
     &__title--blog{
         text-align: center;
         max-width: 100%;
-        
-        &::after{
-            display: none;
+        font-size: 6.5rem;
+
+        @include respond(phone){
+            font-size: 5.5rem;
+        }
+    }
+
+    &__blog-subtitle{
+        text-align: center;
+        font-size: 2.2rem;
+        margin:0 auto;
+        max-width: 50%;
+
+        @include respond(phone){
+            max-width: 75%;
         }
     }
     
     &__text{
         font-size: 2.2rem;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);  
-        max-width: 40%;
-        
+        max-width: 30%;
+        line-height: 165%;
+
         @include respond(phone-land){
             max-width: 55%;
-        }
-        
-        @include respond(phone){
-            max-width: 80%;
-        }
-    } 
+            font-size: 1.8rem;
+        }    
+    }
 }

@@ -2,9 +2,8 @@
     'post_type' => 'scrapbook',							
     'posts_per_page' => -1,							
     'orderby' => 'date',
-    'order' => 'ASC',
+    'order' => 'DESC',
 ); ?>
-
 
 <section class="section">
         
@@ -14,7 +13,7 @@
 
         <div class="port__card" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);">
 
-            <h2 class="port__title"><?php the_title(); ?></h2>
+            <h2 class="port__title"><?php the_field('scrapbook_description'); ?></h2>
             
             <div class="port__logo">
 

@@ -1,5 +1,5 @@
 .page-intro{
-    padding: 6rem 0 6rem 0 !important;
+    padding: 5rem 0 6rem 0 !important;
     
     &__header-container{
         
@@ -8,21 +8,73 @@
     &__text-box{
         padding:0 3.5rem;
     }
-    
+
+    &__text-box img{
+        -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+        box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+    }
+
     &__text-box--blog{
         padding:3.5rem 3.5rem;
+
+        //Styles for WYSIWYG Editor
+        h1,h2,h3,h4,h5{
+            max-width:85rem;
+            margin:0 auto;
+            line-height: 165%;
+        }
+
+        h1{
+            font-size: 6.5rem;
+        }
+        
+        h2{
+            font-size: 4rem;
+            text-align: center;
+
+            @include respond(phone){
+                font-size: 3rem;
+            }
+                &::after{
+                content: "";
+                display: block;
+                height: 2px;
+                border-radius: 2rem;
+                width: 20rem;
+                background: $colorPrimary;
+                margin:0 auto;
+                margin-top:2rem;
+            }
+        }
+        
+        h3{
+            font-size: 2.5rem;
+            padding-top: 5rem;
+
+            @include respond(phone){
+                font-size: 2.2rem;
+            }
+        }
+        
+        h4{
+            font-size: 2rem;
+        }
+        
+        h5{
+            font-size: 1.6rem;
+        }
     }
     
     &__text-box p, &__text-box ul{
         font-size: 2rem;
         padding-top: 2rem;
-        max-width:96rem;
+        max-width:85rem;
         margin:0 auto;
-        list-style: circle;
     }
     
     &__text-box ul{
         padding-left:5rem;
+        list-style:disc;
     }
     
     &__text-box li{

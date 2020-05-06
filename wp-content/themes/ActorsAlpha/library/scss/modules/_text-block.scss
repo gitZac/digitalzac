@@ -2,6 +2,10 @@
 
     margin:3rem auto;
     
+    &__single{
+        padding-bottom: 2rem;
+    }
+    
     &__title{
         font-size: 2.2rem;
         line-height: 145%;
@@ -11,8 +15,9 @@
         
         content: "";
         display: block;
-        height: 3px;
+        height: 2px;
         width: 15rem;
+        border-radius: 2rem;
         background: $colorPrimary;
         margin-top: 1rem;
         margin-bottom: 1rem;

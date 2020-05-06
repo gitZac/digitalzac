@@ -2,7 +2,6 @@
     overflow:hidden;
     
     &:last-child{
-        margin-bottom: 0;
     }
     
     &__image{
@@ -18,11 +17,33 @@
        margin:4rem 0;
         
         &--inner{
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
     }
     
     &__title--secondary{
         margin:4rem 0;
+    }
+
+
+
+
+}
+
+.section--front{
+    margin-bottom:0rem;
+
+    &:not(:first-child){
+
+        &:after{
+            content: "";
+            display: block;
+            height: 1px;
+            border-radius: 2rem;
+            width: 100%;
+            background-color:#f7f7f7;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
     }
 }

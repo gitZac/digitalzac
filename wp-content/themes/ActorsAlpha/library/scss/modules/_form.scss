@@ -4,6 +4,14 @@ div.wpcf7{
     width:50%;
     margin:0 auto;
     
+    @include respond(phone-land){
+        width:75%;
+    }
+    
+    @include respond(phone){
+        width:100%;
+    }
+    
     .field{
         margin-bottom: 20px;
     }

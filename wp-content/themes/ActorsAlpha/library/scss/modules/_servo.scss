@@ -1,8 +1,12 @@
 .servo-box{
     background-color: rgba($colorWhite, .8);
     border-radius: .2rem;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.4);
     box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.4);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
     transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
     position: relative;
     
     &--small{
@@ -16,6 +20,7 @@
     }
    
     &:hover{
+        -webkit-transform: translateY(-0.1rem) scale(1.01);
         transform: translateY(-0.1rem) scale(1.01);    
     }
     
@@ -39,6 +44,7 @@
         -webkit-box-decoration-break: clone;
 
         padding:.2rem 1.5rem;
+        background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($colorPrimaryLight, .85)), to(rgba($colorPrimaryDark, .85)));
         background-image: linear-gradient(to right bottom, rgba($colorPrimaryLight, .85), rgba($colorPrimaryDark, .85));
     }
     

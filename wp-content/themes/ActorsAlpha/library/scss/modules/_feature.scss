@@ -44,16 +44,16 @@
 
 /*Shaded overlay */
 .feature::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color:rgba(0,0,0,.6);
-  transition:background-color 0.5s linear;
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.6);
+    transition:background-color 0.5s linear;
 }
 
 .feature:hover:after{
-  background-color:rgba(0,0,0,.9);
+    background-color:rgba(0,0,0,.9);
 }
